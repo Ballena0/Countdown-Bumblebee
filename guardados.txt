@@ -1,0 +1,26 @@
+guardados
+
+
+<div class="content" align="center">
+  <p style="color:yellow;" id="count"></p>
+</div>
+
+
+<script>
+//set d/h/m/s
+var CountDownDate=new Date("Jan 4, 2019 00:00:00").getTime();
+//intevalo
+var x=setInterval(function(){
+  //fecha de hoy
+  var now=new Date().getTime();
+  //encotrar distancia hoy/plazo
+  var diff=CountDownDate - now;
+  //calculo de dias horas minutos segundos
+  var days = Math.floor(diff/ (1000 * 60 * 60 * 24));
+  var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  //deberia retornar en elemento democ
+  document.getElementById("count").innerHTML = days + " Dias " + hours + " Horas " + minutes + " Minutos " + seconds + " Segundos ";
+},1000);
+</script>
